@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Grupo de Fados do IPCA - Preservando a tradição do fado académico">
+    <title>Grupo de Fados do IPCA</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+               <img src="img/logo1.png" alt="Fados IPCA" class="brand-symbol">
+               <span class="brand-text">Fados IPCA</span>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#inicio" class="nav-link active">Início</a></li>
+                <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                <li><a href="#repertorio" class="nav-link">Repertório</a></li>
+                <li><a href="#instrumentais" class="nav-link">Instrumentais</a></li>
+                <li><a href="#contactos" class="nav-link">Contactos</a></li>
+                <li><button class="btn-admin" id="btnAdmin">Admin</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="title-line">Grupo de Fados do IPCA</span>
+                <span class="title-line accent">Gallus Gallus</span>
+            </h1>
+            <p class="hero-subtitle">Preservando a tradição do fado académico desde 2009</p>
+            <div class="hero-actions">
+                <a href="#repertorio" class="btn btn-primary">Ver Repertório</a>
+                <a href="#instrumentais" class="btn btn-secondary">Instrumentais</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span class="scroll-text">Deslize</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section section-about" id="sobre">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Conheça-nos</span>
+                <h2 class="section-title">Sobre o Grupo</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="lead">O Grupo de Fados do IPCA é uma comunidade dedicada à preservação e divulgação da tradição fadista no contexto académico.</p>
+                    <p>Fundado por estudantes apaixonados pela música tradicional portuguesa, o grupo reúne-se regularmente para ensaios as terças 19H, partilha de conhecimento e atuações que celebram a riqueza cultural do fado.</p>
+                    <p>Com um repertório de Fados de Coimbra, o grupo mantém viva a chama desta expressão musical única, Património Cultural Imaterial da Humanidade.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">20+</div>
+                        <div class="stat-label">Membros Ativos</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">45+</div>
+                        <div class="stat-label">Músicas no Repertório</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Atuações Realizadas</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Repertoire Section (Combined with Library) -->
+    <section class="section section-repertoire" id="repertorio">
+        <div class="container">
+            <div class="section-header centered">
+                <span class="section-label">Nossa Música</span>
+                <h2 class="section-title">Repertório Completo</h2>
+                <p class="section-description">Explore cada música com letras, acordes, áudios e vídeos</p>
+            </div>
+            
+            <div class="library-search">
+                <input type="text" id="repertoireSearch" class="search-input" placeholder="Pesquisar música, compositor...">
+            </div>
+            
+            <div class="repertoire-filters">
+                <button class="filter-btn active" data-category="todos">Todas</button>
+                <button class="filter-btn" data-category="coimbra">Fado de Coimbra</button>
+                <button class="filter-btn" data-category="outros">Outros</button>
+            </div>
+
+            <div class="repertoire-grid" id="repertoireGrid">
+                <!-- Songs will be loaded here via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Instrumentais Section -->
+    <section class="section section-instrumentais" id="instrumentais">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Tablaturas</span>
+                <h2 class="section-title">Instrumentais</h2>
+                <p class="section-description">Tablaturas de guitarra portuguesa para estudo</p>
+            </div>
+
+            <div class="instrumentais-grid" id="instrumentaisGrid">
+                <!-- Cards will be generated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section section-contact" id="contactos">
+        <div class="container">
+            <div class="section-header centered">
+                <span class="section-label">Fale Connosco</span>
+                <h2 class="section-title">Contactos</h2>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">✉</div>
+                        <h3>Email</h3>
+                        <p><a href="mailto:gfipca@gmail.com">gfipca@gmail.com</a></p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">📍</div>
+                        <h3>Localização</h3>
+                        <p>19h - Sala de Grupos académicos<br>IPCA-Barcelos</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">🎵</div>
+                        <h3>Redes Sociais</h3>
+                        <div class="social-links">
+                            <a href="https://www.instagram.com/gfipca?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="social-link">Instagram</a>
+                            <a href="https://www.facebook.com/GFIPCA/?locale=pt_PT" class="social-link">Facebook</a>
+                            <a href="https://youtu.be/KZ2R2kkNE9w?si=0QnyNHItknYnX4YV" class="social-link">YouTube</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="brand-symbol">♪</span>
+                    <span class="brand-text">Fados IPCA</span>
+                </div>
+                <p class="footer-text">Preservando a tradição do fado académico desde 2009</p>
+                <p class="footer-copyright">&copy; 2025 Grupo de Fados do IPCA, por Rafaella Oliveira. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Song Modal (Complete with all resources) -->
+    <div class="modal" id="songModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content song-modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div id="modalBody">
+                <!-- Song header -->
+                <div class="song-modal-header">
+                    <h2 id="songModalTitle"></h2>
+                    <p id="songModalComposer"></p>
+                </div>
+                
+                <!-- Resource tabs -->
+                <div class="song-modal-tabs">
+                    <button class="song-tab-btn active" data-tab="letra">📝 Letra</button>
+                    <button class="song-tab-btn" data-tab="acordes">🎸 Acordes</button>
+                    <button class="song-tab-btn" data-tab="gp">🪕 Guitarra Portuguesa</button>
+                    <button class="song-tab-btn" data-tab="audio">🎵 Áudios</button>
+                    <button class="song-tab-btn" data-tab="video">🎬 Vídeos</button>
+                </div>
+                
+                <!-- Tab contents -->
+                <div class="song-modal-content">
+                    <div class="song-tab-content active" id="tabLetra">
+                        <pre id="songLyrics" class="song-lyrics"></pre>
+                    </div>
+                    <div class="song-tab-content" id="tabAcordes">
+                        <div id="songAcordes"></div>
+                    </div>
+                    <div class="song-tab-content" id="tabGP">
+                        <div id="songGP"></div>
+                    </div>
+                    <div class="song-tab-content" id="tabAudio">
+                        <div id="songAudios"></div>
+                    </div>
+                    <div class="song-tab-content" id="tabVideo">
+                        <div id="songVideos"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Modal -->
+    <div class="modal" id="adminModal">
+        <div class="modal-overlay" id="adminModalOverlay"></div>
+        <div class="modal-content admin-modal-content">
+            <button class="modal-close" id="adminModalClose">&times;</button>
+            
+            <!-- Login Screen -->
+            <div id="adminLogin" class="admin-section">
+                <h2>Área de Membros</h2>
+                <p><strong>🎵 Membros do Grupo:</strong> Aceda aos vídeos exclusivos</p>
+                <p><strong>⚙️ Administradores:</strong> Gerir conteúdo do site</p>
+                <div class="form-group">
+                    <input type="password" id="adminPassword" class="form-input" placeholder="Senha">
+                </div>
+                <button class="btn btn-primary" id="btnLogin">Entrar</button>
+                <p class="admin-hint">💡 Dica: Peça a senha ao coordenador do grupo</p>
+            </div>
+
+            <!-- Admin Panel -->
+            <div id="adminPanel" class="admin-section" style="display: none;">
+                <h2>Painel Administrativo</h2>
+                
+                <!-- Tabs -->
+                <div class="admin-tabs">
+                    <button class="admin-tab-btn active" data-tab="addSong">➕ Adicionar Música</button>
+                    <button class="admin-tab-btn" data-tab="addResource">📁 Adicionar Recurso</button>
+                    <button class="admin-tab-btn" data-tab="export">💾 Exportar Dados</button>
+                </div>
+
+                <!-- Add Song Form -->
+                <div id="addSong" class="admin-tab-content active">
+                    <h3>Nova Música</h3>
+                    <form id="formAddSong">
+                        <div class="form-group">
+                            <label>Título *</label>
+                            <input type="text" name="title" class="form-input" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Categoria *</label>
+                                <select name="category" class="form-input" required>
+                                    
+                                    <option value="coimbra">Fado de Coimbra</option>
+                                    
+                                    <option value="outros">Outros</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Tom *</label>
+                                <input type="text" name="tom" class="form-input" placeholder="Ex: Lá menor" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Compositor *</label>
+                            <input type="text" name="composer" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Letra</label>
+                            <textarea name="lyrics" class="form-textarea" rows="8" placeholder="Letra da música (opcional)"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Link Partitura</label>
+                            <input type="text" name="partitura" class="form-input" placeholder="biblioteca/nomedamusica/partitura.pdf">
+                        </div>
+                        <div class="form-group">
+                            <label>Link Vídeo</label>
+                            <input type="url" name="video" class="form-input" placeholder="https://youtube.com/embed/...">
+                        </div>
+                        <div class="form-group">
+                            <label>Notas</label>
+                            <textarea name="notes" class="form-textarea" rows="3" placeholder="Notas adicionais (opcional)"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">✅ Adicionar Música</button>
+                    </form>
+                </div>
+
+                <!-- Add Resource Form -->
+                <div id="addResource" class="admin-tab-content">
+                    <h3>Novo Recurso</h3>
+                    <form id="formAddResource">
+                        <div class="form-group">
+                            <label>Tipo de Recurso *</label>
+                            <select name="type" class="form-input" required>
+                                <option value="letras">📝 Letra</option>
+                                <option value="guitarraClassica">🎸 Guitarra Clássica</option>
+                                <option value="guitarraPortuguesa">🪕 Guitarra Portuguesa</option>
+                                <option value="audios">🎵 Áudio</option>
+                                <option value="videos">🎬 Vídeo</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Título *</label>
+                            <input type="text" name="title" class="form-input" placeholder="Ex: Amor de Estudante - Letra" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Ficheiro (caminho) *</label>
+                            <input type="text" name="file" class="form-input" placeholder="biblioteca/nomedamusica/ficheiro.pdf" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Tamanho</label>
+                                <input type="text" name="size" class="form-input" placeholder="Ex: 2.5 MB">
+                            </div>
+                            <div class="form-group">
+                                <label>Duração (só áudio/vídeo)</label>
+                                <input type="text" name="duration" class="form-input" placeholder="Ex: 3:45">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">✅ Adicionar Recurso</button>
+                    </form>
+                </div>
+
+                <!-- Export Data -->
+                <div id="export" class="admin-tab-content">
+                    <h3>Exportar Dados</h3>
+                    <p>Copie o código abaixo e cole no ficheiro <code>data.js</code></p>
+                    <div class="export-actions">
+                        <button class="btn btn-secondary" id="btnExportSongs">📋 Copiar Músicas</button>
+                        <button class="btn btn-secondary" id="btnExportResources">📋 Copiar Recursos</button>
+                        <button class="btn btn-secondary" id="btnExportAll">📋 Copiar Tudo</button>
+                    </div>
+                    <textarea id="exportOutput" class="form-textarea export-output" rows="15" readonly></textarea>
+                    <p class="admin-note">⚠️ Após copiar, substitua o conteúdo correspondente no ficheiro data.js</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tablatura Viewer Modal -->
+    <div class="modal" id="tablaturaModal">
+        <div class="modal-overlay" id="tablaturaModalOverlay"></div>
+        <div class="modal-content tablatura-modal-content">
+            <button class="modal-close" id="tablaturaModalClose">&times;</button>
+            <div class="tablatura-viewer">
+                <h2 id="tablaturaTitle" class="tablatura-title"></h2>
+                <div class="tablatura-navigation">
+                    <button class="tablatura-nav-btn" id="btnPrevTablatura">← Anterior</button>
+                    <span class="tablatura-counter" id="tablaturaCounter">1 / 1</span>
+                    <button class="tablatura-nav-btn" id="btnNextTablatura">Próxima →</button>
+                </div>
+                <div class="tablatura-image-container">
+                    <img id="tablaturaImage" src="" alt="Tablatura">
+                </div>
+                <div class="tablatura-controls">
+                    <button class="btn btn-secondary" id="btnZoomIn">🔍 Ampliar</button>
+                    <button class="btn btn-secondary" id="btnZoomOut">🔍 Reduzir</button>
+                    <button class="btn btn-secondary" id="btnResetZoom">↻ Reset</button>
+                    <a id="btnDownloadTablatura" class="btn btn-primary" download>⬇️ Download Imagem</a>
+                    <a id="btnDownloadPdf" class="btn btn-primary" download style="display: none;">📄 Download PDF</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
