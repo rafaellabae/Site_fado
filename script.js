@@ -554,21 +554,49 @@ function loadSongResources(song) {
     
     // Video files from library
     if (videoResources.length > 0) {
-        videosHTML += videoResources.map(r => `
-            <div class="resource-item">
-                <div class="resource-info">
-                    <h4>${r.title}</h4>
-                    <p>${r.filename}</p>
-                </div>
-                <div class="resource-actions">
-                    <a href="${r.file}" class="btn-resource" download>⬇️ Download</a>
-                </div>
-            </div>
-            <video class="video-player" controls>
-                <source src="${r.file}" type="video/mp4">
-                Seu navegador não suporta vídeo.
-            </video>
-        `).join('');
+        videosHTML += videoResources.map(r => {
+            // Verificar se é vídeo do Google Drive (embed)
+            const isDriveEmbed = r.file.includes('drive.google.com') && 
+                               (r.file.includes('/preview') || r.file.includes('/view'));
+            
+            if (isDriveEmbed) {
+                // Usar iframe para vídeos do Google Drive (privados)
+                const embedUrl = r.file.replace('/view', '/preview');
+                return `
+                    <div class="resource-item">
+                        <div class="resource-info">
+                            <h4>${r.title}</h4>
+                            <p>${r.filename}${r.isPrivate ? ' 🔒 Privado (requer autorização do Google)' : ''}</p>
+                        </div>
+                    </div>
+                    <iframe 
+                        class="video-player" 
+                        src="${embedUrl}" 
+                        width="100%" 
+                        height="480" 
+                        allow="autoplay; encrypted-media" 
+                        allowfullscreen>
+                    </iframe>
+                `;
+            } else {
+                // Usar tag <video> para arquivos locais
+                return `
+                    <div class="resource-item">
+                        <div class="resource-info">
+                            <h4>${r.title}</h4>
+                            <p>${r.filename}</p>
+                        </div>
+                        <div class="resource-actions">
+                            <a href="${r.file}" class="btn-resource" download>⬇️ Download</a>
+                        </div>
+                    </div>
+                    <video class="video-player" controls>
+                        <source src="${r.file}" type="video/mp4">
+                        Seu navegador não suporta vídeo.
+                    </video>
+                `;
+            }
+        }).join('');
     }
     
     if (videosHTML) {
