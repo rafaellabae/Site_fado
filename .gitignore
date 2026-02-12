@@ -1,4 +1,4 @@
-# Ficheiros do sistema operativo
+﻿# Ficheiros do sistema operativo
 .DS_Store
 Thumbs.db
 
@@ -14,19 +14,19 @@ Thumbs.db
 # Node modules (se usar)
 node_modules/
 
-# Ficheiros ZIP
+# Ficheiros ZIP grandes
 *.zip
 
-# Ficheiros de áudio e vídeo (demasiado grandes para GitHub)
-*.mp3
+# VÍDEOS (sempre ignorar - são muito grandes, usar Google Drive)
 *.mp4
-*.wav
 *.m4a
-*.WAV
 *.avi
 *.mov
 *.flv
+*.3gp
+*.3gpp
+*.mkv
+*.webm
 
-# Gravações na biblioteca (manter estrutura mas ignorar media)
-biblioteca/**/Gravações/
-biblioteca/Instrumentais/Originais/
+# Manter PDFs e áudios MP3/WAV pequenos (ok para GitHub)
+# Nota: GitHub permite até 100MB por arquivo
